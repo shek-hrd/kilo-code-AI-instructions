@@ -1,0 +1,105 @@
+{
+  "name": "kilo-code-instructions-lite",
+  "displayName": "Kilo Code Instructions - Lite Edition",
+  "description": "The KILO Code with Code Supernova 1 million optimized instructions & The Lightweight AI instruction management system for VSCode with essential kilo code integration",
+  "version": "1.0.0",
+  "publisher": "kilo-code",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Snippets"
+  ],
+  "keywords": [
+    "ai",
+    "instructions",
+    "kilo-code",
+    "assistant",
+    "productivity"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "kilo-code-instructions-lite.install",
+        "title": "Install Kilo Code Instructions",
+        "category": "Kilo Code"
+      },
+      {
+        "command": "kilo-code-instructions-lite.uninstall",
+        "title": "Uninstall Kilo Code Instructions",
+        "category": "Kilo Code"
+      },
+      {
+        "command": "kilo-code-instructions-lite.showInstructions",
+        "title": "Show AI Instructions",
+        "category": "Kilo Code"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "kilo-code-instructions-lite.install",
+          "when": "!workspaceFolder"
+        },
+        {
+          "command": "kilo-code-instructions-lite.uninstall",
+          "when": "!workspaceFolder"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Kilo Code Instructions Configuration",
+      "properties": {
+        "kiloCodeInstructions.autoLoad": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically load AI instructions on startup"
+        },
+        "kiloCodeInstructions.instructionFile": {
+          "type": "string",
+          "default": "",
+          "description": "Path to custom instruction file (relative to workspace)"
+        },
+        "kiloCodeInstructions.globalInstallation": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable global installation mode"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@vscode/vsce": "^2.22.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shek-hrd/kilo-code-AI-instructions"
+  },
+  "bugs": {
+    "url": "https://github.com/shek-hrd/kilo-code-AI-instructions/issues"
+  },
+  "homepage": "https://github.com/shek-hrd/kilo-code-AI-instructions#README.md",
+  "author": {
+    "name": "Kilo Code Team"
+  },
+  "license": "MIT"
+}
